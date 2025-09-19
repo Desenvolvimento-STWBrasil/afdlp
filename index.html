@@ -293,38 +293,151 @@
         flex-grow: 1; /* Faz o parágrafo ocupar o espaço para alinhar os cards */
       }
 
-      .modulos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
+      /* --- NOVO ESTILO: SEÇÃO 'SOLUÇÃO' COM TIMELINE --- */
+
+      #solucao {
+        background-color: var(--branco); /* Fundo branco para um visual clean */
       }
+
+      #solucao .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+
+      #solucao .section-header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* A base da nossa linha do tempo */
+      .modulos-timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* A linha vertical que conecta os módulos */
+      .modulos-timeline::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        opacity: 0.3;
+        top: 20px;
+        bottom: 20px;
+        left: 30px;
+        margin-left: -2px;
+      }
+
       .modulo-card {
-        background: var(--branco);
-        border: 1px solid #ddd;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s, box-shadow 0.3s;
+        padding: 30px 30px 30px 80px; /* Espaço à esquerda para a timeline */
+        position: relative;
+        background-color: var(--branco);
+        border-radius: 12px;
+        margin-bottom: 40px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
       }
+
       .modulo-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transform: translateX(10px);
+        border-color: var(--azul-principal);
+        box-shadow: 0 10px 30px rgba(54, 104, 177, 0.1);
       }
-      .modulo-card h4 {
-        font-size: 1.5rem;
-        color: var(--azul-principal);
+
+      /* O círculo em cada passo da timeline */
+      .modulo-card::before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--branco);
+        border: 5px solid var(--azul-destaque);
+        top: 35px;
+        left: 20px;
+        z-index: 1;
+        transition: all 0.3s ease;
       }
-      .modulo-card p {
-        font-style: italic;
+
+      .modulo-card:hover::before {
+        background-color: var(--azul-destaque);
+      }
+
+      .modulo-header {
         margin-bottom: 20px;
       }
-      .modulo-card ul {
-        list-style-position: inside;
-        padding-left: 0;
+
+      .modulo-tag {
+        display: inline-block;
+        background-color: var(--azul-principal);
+        color: var(--branco);
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 15px;
       }
-      .modulo-card ul li {
-        margin-bottom: 10px;
+
+      .modulo-card h4 {
+        font-size: 1.8rem;
+        color: var(--azul-principal);
+      }
+
+      .modulo-objetivo {
+        font-style: italic;
+        margin-bottom: 25px;
+        color: #555;
+      }
+
+      .modulo-card h6 {
+        font-family: var(--fonte-titulo);
+        color: var(--cinza-texto);
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+
+      .modulo-aprendizado {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 30px;
+      }
+
+      .modulo-aprendizado li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+        font-size: 1.05rem;
+      }
+
+      .modulo-aprendizado li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--verde-cta);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      /* Seção de Entregáveis destacada dentro do card */
+      .modulo-entregaveis {
+        background-color: #f7f9fc; /* Um cinza-azulado muito claro */
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+        border: 1px solid #e0e6f0;
+      }
+
+      .modulo-entregaveis ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+      }
+      .modulo-entregaveis li {
+        margin-bottom: 8px;
       }
       .urgency-section {
         text-align: center;
@@ -1202,27 +1315,32 @@
 
       <section id="solucao">
         <div class="container">
-          <h2 style="text-align: center">O Método: Sua Jornada em 3 Módulos</h2>
-          <p style="text-align: center">
-            Se você se identificou com 1 ou mais itens, a Imersão Prova Digital
-            360 foi desenhada para você. Do básico ao avançado, com método,
-            modelos e casos reais e práticos. Veja tudo o que você vai aprender.
-          </p>
-          <div class="modulos-grid">
+          <div class="section-header">
+            <h2>O Método: Sua Jornada em 3 Módulos</h2>
+            <p>
+              Uma imersão completa, do básico ao avançado, com método, modelos e
+              casos reais. Veja o caminho que preparamos para você dominar a
+              prova digital.
+            </p>
+          </div>
+
+          <div class="modulos-timeline">
             <div class="modulo-card">
-              <h4>Módulo 1 – Fundamentos e Prática da Prova Digital</h4>
-              <p>
+              <div class="modulo-header">
+                <span class="modulo-tag">Módulo 1</span>
+                <h4>Fundamentos e Prática da Prova Digital</h4>
+              </div>
+              <p class="modulo-objetivo">
                 Este módulo apresenta os conceitos essenciais sobre provas
                 digitais, da cena do crime ao tribunal, abordando criminalística
                 digital, cadeia de custódia, normas ISO, nulidades e ferramentas
                 de análise forense.
               </p>
-              <strong>O que o aluno vai aprender:</strong>
-              <ul>
+              <h6>O que o aluno vai aprender:</h6>
+              <ul class="modulo-aprendizado">
                 <li>Diferença entre vestígio, indício, evidência e prova.</li>
                 <li>
-                  Regras da cadeia de custódia digital (art. 158-A a 158-F,
-                  CPP).
+                  Regras da cadeia de custódia digital (art. 158-A a 158-F, CPP)
                 </li>
                 <li>Princípios da ISO/IEC 27037 e sua aplicação prática.</li>
                 <li>
@@ -1232,9 +1350,8 @@
                 <li>Uso de algoritmos de hash na validação de integridade.</li>
                 <li>Estrutura e leitura de arquivos UFDR (exemplo prático).</li>
               </ul>
-
-              <div class="entregaveis-modulo">
-                <strong>Entregáveis deste Módulo:</strong>
+              <div class="modulo-entregaveis">
+                <h6>🎁 Entregáveis deste Módulo:</h6>
                 <ul>
                   <li>
                     <strong>Tabela de nulidades:</strong> Principais pontos de
@@ -1252,15 +1369,19 @@
                 </ul>
               </div>
             </div>
+
             <div class="modulo-card">
-              <h4>Módulo 2 — Laboratório Técnico</h4>
-              <p>
+              <div class="modulo-header">
+                <span class="modulo-tag">Módulo 2</span>
+                <h4>Laboratório Técnico e Análise de Laudos</h4>
+              </div>
+              <p class="modulo-objetivo">
                 Leitura de metadados, construção de timelines com logs,
                 autenticidade de prints/capturas, estrutura de laudos e quesitos
                 ao perito que abrem portas.
               </p>
-              <strong>Você vai aprender:</strong>
-              <ul>
+              <h6>O que o aluno vai aprender:</h6>
+              <ul class="modulo-aprendizado">
                 <li>
                   Metadados na prática: o que procurar e como interpretar.
                 </li>
@@ -1274,18 +1395,34 @@
                 </li>
                 <li>Quesitos ao perito: modelos e lógica.</li>
               </ul>
-              <br /><strong>Entregáveis:</strong> Modelo de quesitos técnicos,
-              Checklist de Autenticidade, Template de análise de laudo.
+              <div class="modulo-entregaveis">
+                <h6>🎁 Entregáveis deste Módulo:</h6>
+                <ul>
+                  <!-- <li>
+                    <strong>Modelo de Quesitos Técnicos:</strong> Para diversas
+                    situações.
+                  </li> -->
+                  <li>
+                    <strong>Checklist de Autenticidade:</strong> Modelo de
+                    quesitos técnicos, Checklist de Autenticidade, Template de
+                    análise de laudo.
+                  </li>
+                </ul>
+              </div>
             </div>
+
             <div class="modulo-card">
-              <h4>Módulo 3 — Estratégia e Audiência</h4>
-              <p>
+              <div class="modulo-header">
+                <span class="modulo-tag">Módulo 3</span>
+                <h4>Estratégia e Audiência</h4>
+              </div>
+              <p class="modulo-objetivo">
                 Do dado à tese (ilicitude, contaminação, cadeia rompida,
                 insuficiência), arquitetura de peças
                 (requerimentos/memoriais/contrarrazões) e roteiro de audiência.
               </p>
-              <strong>Você vai aprender:</strong>
-              <ul>
+              <h6>O que você vai aprender:</h6>
+              <ul class="modulo-aprendizado">
                 <li>
                   Como converter metadados/logs em argumentos consistentes.
                 </li>
@@ -1294,16 +1431,19 @@
                 <li>Audiência com tema digital: roteiro de perguntas.</li>
                 <li>Gestão de prazos com checklists.</li>
               </ul>
-              <br /><strong>Entregáveis:</strong> Modelo de peça (impugnação),
-              Roteiro de audiência, Matriz de risco.
+              <div class="modulo-entregaveis">
+                <h6>🎁 Entregáveis deste Módulo:</h6>
+                <ul>
+                  <li>
+                    <strong>Modelo de Peça:</strong> (impugnação), Roteiro de
+                    audiência, Matriz de risco.
+                  </li>
+                  <!-- <li>
+                    <strong>Roteiro de Audiência:</strong> Com perguntas-chave.
+                  </li> -->
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="urgency-section" id="inscricao">
-            <a href="#inscricao" class="cta-button"
-              >Quero garantir minha vaga</a
-            >
-            <p>Apenas 16 vagas</p>
-            <p>Inscrições encerram em: [Insira a data de encerramento]</p>
           </div>
         </div>
       </section>
