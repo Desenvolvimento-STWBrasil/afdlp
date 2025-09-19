@@ -379,22 +379,54 @@
         }
       }
 
+      /* --- ESTILOS ATUALIZADOS PARA A SEÇÃO DE ENTREGÁVEIS --- */
       .entregaveis-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 30px;
         margin-top: 40px;
-        align-items: center;
-        text-align: center;
+        align-items: stretch; /* Garante que os cards na mesma linha estiquem para a mesma altura */
       }
-      .entregavel-item img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 15px;
+
+      .entregavel-item {
+        background-color: var(--branco);
         border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden; /* Essencial para o border-radius da imagem */
+        display: flex;
+        flex-direction: column; /* Organiza o conteúdo em coluna (imagem em cima, texto embaixo) */
       }
-      .entregavel-item h4 {
+
+      .entregavel-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .entregavel-item img {
+        width: 100%;
+        height: 220px; /* Altura padrão para todas as imagens */
+        object-fit: cover; /* Evita que a imagem distorça */
+        display: block;
+      }
+
+      .entregavel-info {
+        padding: 20px;
+        flex-grow: 1; /* Faz esta div ocupar todo o espaço restante do card */
+        display: flex;
+        flex-direction: column; /* Organiza o título e o parágrafo */
+      }
+
+      .entregavel-info h4 {
         font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .entregavel-info p {
+        font-size: 1rem;
+        margin-bottom: 0;
+        max-width: 100%;
+        margin-top: auto; /* Empurra o parágrafo para o final do card */
       }
 
       .bonus-grid {
@@ -709,6 +741,156 @@
       .vagas-info strong {
         font-weight: 700;
         color: #fff;
+      }
+
+      /* --- NOVO ESTILO PARA A SEÇÃO CTA FINAL --- */
+      .cta-final {
+        padding: 80px 0; /* Aumenta o padding vertical para mais espaço */
+        background: linear-gradient(
+          135deg,
+          var(--azul-principal) 0%,
+          #4a7ec9 100%
+        ); /* Fundo com gradiente */
+        color: var(--branco); /* Altera a cor do texto para branco */
+      }
+
+      .cta-final .container {
+        max-width: 900px;
+      }
+
+      .cta-final-card {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.95
+        ); /* Fundo branco semi-transparente */
+        padding: 60px 40px;
+        border-radius: 12px; /* Cantos mais arredondados */
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); /* Sombra mais profunda */
+        text-align: center;
+        color: var(--cinza-texto); /* Texto interno do card em cinza */
+      }
+
+      .cta-final-card h2 {
+        color: var(--azul-principal); /* Título principal em azul */
+        font-size: 2.8rem; /* Aumenta o tamanho do título */
+        margin-bottom: 25px;
+      }
+
+      .cta-final-card > p {
+        font-family: var(
+          --fonte-corpo
+        ); /* Garante a fonte padrão para o parágrafo */
+        font-size: 1.2rem;
+        margin-bottom: 45px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+      }
+
+      .cta-final .recap-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto 50px auto;
+        columns: 2; /* Mantém as duas colunas */
+        column-gap: 50px; /* Aumenta o espaçamento entre as colunas */
+        text-align: left;
+        max-width: 700px; /* Ajusta a largura máxima da lista */
+      }
+
+      .cta-final .recap-list li {
+        font-size: 1.15rem; /* Aumenta o tamanho do texto da lista */
+        margin-bottom: 25px; /* Mais espaço entre os itens */
+        display: flex;
+        align-items: flex-start;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        font-weight: 500; /* Levemente mais negrito */
+      }
+
+      .cta-final .recap-list li::before {
+        content: "⚡"; /* Novo ícone para mais impacto */
+        font-size: 1.6rem; /* Ícone maior */
+        margin-right: 18px;
+        line-height: 1.3; /* Alinha melhor o ícone com o texto */
+        transform: translateY(-2px); /* Pequeno ajuste vertical do ícone */
+      }
+
+      .cta-final .cta-button {
+        background-color: var(
+          --verde-cta
+        ); /* Botão CTA com a cor principal de verde */
+        color: var(--branco);
+        font-size: 1.4rem; /* Botão maior */
+        padding: 20px 45px; /* Mais padding no botão */
+        border-radius: 10px; /* Cantos mais arredondados */
+        box-shadow: 0 6px 20px rgba(0, 128, 0, 0.3); /* Sombra para o botão */
+        margin-bottom: 25px; /* Mais espaço abaixo do botão */
+      }
+
+      .cta-final .cta-button:hover {
+        background-color: var(--azul-destaque); /* Efeito hover mais escuro */
+        transform: translateY(-5px) scale(1.02); /* Mantém o efeito de levitação */
+        box-shadow: 0 10px 25px rgba(0, 128, 0, 0.4);
+      }
+
+      .cta-final .disclaimer {
+        color: var(--cinza-texto); /* Cor do disclaimer */
+        font-size: 0.95rem;
+        margin-top: 20px;
+        font-style: italic;
+        opacity: 0.8;
+      }
+
+      /* Responsividade para telas menores */
+      @media (max-width: 768px) {
+        .cta-final {
+          padding: 60px 0;
+        }
+        .cta-final-card {
+          padding: 40px 25px;
+        }
+        .cta-final-card h2 {
+          font-size: 2.2rem;
+        }
+        .cta-final-card > p {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+        .cta-final .recap-list {
+          columns: 1; /* Volta para uma coluna em telas pequenas */
+          margin-bottom: 30px;
+        }
+        .cta-final .recap-list li {
+          font-size: 1rem;
+          margin-bottom: 18px;
+        }
+        .cta-final .recap-list li::before {
+          font-size: 1.4rem;
+          margin-right: 15px;
+        }
+        .cta-final .cta-button {
+          font-size: 1.2rem;
+          padding: 18px 35px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cta-final-card h2 {
+          font-size: 1.8rem;
+        }
+        .cta-final-card > p {
+          font-size: 0.95rem;
+        }
+        .cta-final .recap-list li {
+          font-size: 0.95rem;
+        }
+        .cta-final .recap-list li::before {
+          font-size: 1.2rem;
+        }
       }
     </style>
   </head>
@@ -1203,49 +1385,62 @@
 
       <section class="bg-gray" id="entregaveis">
         <div class="container">
-          <h2 style="text-align: center">Você também irá receber:</h2>
+          <h2 style="text-align: center">Você também irá receber:</h2>
           <div class="entregaveis-grid">
             <div class="entregavel-item">
               <img
                 src="image/livro_integridadesdasprovas.webp"
                 alt="Livro Integridades das Provas"
               />
-              <h4>Livro Autografado</h4>
-              <p>"Integridades das Provas" do professor Leandro Morales.</p>
+              <div class="entregavel-info">
+                <h4>Livro Autografado</h4>
+                <p>"Integridades das Provas" do professor Leandro Morales.</p>
+              </div>
             </div>
             <div class="entregavel-item">
               <img
                 src="image/forenseemassinaturaeletronica.webp"
                 alt="Forense em Assinatura Eletrônica"
               />
-              <h4>Livro Autografado</h4>
-              <p>"Forense em Assinatura Eletrônica" do professor Marcelo Nagy.</p>
+              <div class="entregavel-info">
+                <h4>Livro Autografado</h4>
+                <p>
+                  "Forense em Assinatura Eletrônica" do professor Marcelo Nagy.
+                </p>
+              </div>
             </div>
             <div class="entregavel-item">
               <img
                 src="image/checklists.png"
                 alt="Checklists exclusivos para análise forense"
               />
-              <h4>Checklists Exclusivos</h4>
-              <p>Para análise de cadeia de custódia e autenticidade.</p>
+              <div class="entregavel-info">
+                <h4>Checklists Exclusivos</h4>
+                <p>Para análise de cadeia de custódia e autenticidade.</p>
+              </div>
             </div>
             <div class="entregavel-item">
               <img
                 src="image/certificado.png"
                 alt="Certificado de participação da Academia de Forense Digital"
               />
-              <h4>Certificado AFD</h4>
-              <p>Com o peso e a autoridade da Academia de Forense Digital.</p>
+              <div class="entregavel-info">
+                <h4>Certificado AFD</h4>
+                <p>Com o peso e a autoridade da Academia de Forense Digital.</p>
+              </div>
             </div>
             <div class="entregavel-item">
               <img
                 src="image/voucher.png"
                 alt="Voucher para a palestra Blindagem Digital"
               />
-              <h4>Voucher de Palestra</h4>
-              <p>
-                "Blindagem Digital: como proteger seu celular e redes sociais".
-              </p>
+              <div class="entregavel-info">
+                <h4>Voucher de Palestra</h4>
+                <p>
+                  "Blindagem Digital: como proteger seu celular e redes
+                  sociais".
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1277,31 +1472,33 @@
         </div>
       </section> -->
 
-      <section class="cta-final" id="cta-final">
-        <div class="container" style="text-align: center">
-          <h2>Pronto para Atuar com Total Segurança em Provas Digitais?</h2>
-          <p>Recapitulando, na imersão você vai aprender a:</p>
-          <ul class="recap-list">
-            <li>
-              Identificar vícios de cadeia de custódia e apontar nulidades com
-              segurança.
-            </li>
-            <li>
-              Pedir exatamente o que importa (bases brutas, metadados, logs,
-              complementações de laudo).
-            </li>
-            <li>Ler e impugnar laudos sem depender do perito adverso.</li>
-            <li>Questionar prints/capturas com critérios técnicos claros.</li>
-            <li>
-              Transformar artefatos técnicos em teses defensivas e atuar com
-              firmeza em audiência.
-            </li>
-          </ul>
-          <a href="#inscricao" class="cta-button">Quero me inscrever agora</a>
-          <p class="disclaimer">
-            *Conteúdo educacional; não constitui aconselhamento para casos
-            específicos nem promessa de resultado.
-          </p>
+      <section class="cta-final bg-gray" id="cta-final">
+        <div class="container">
+          <div class="cta-final-card">
+            <h2>Pronto para Atuar com Total Segurança em Provas Digitais?</h2>
+            <p>Recapitulando, na imersão você vai aprender a:</p>
+            <ul class="recap-list">
+              <li>
+                Identificar vícios de cadeia de custódia e apontar nulidades com
+                segurança.
+              </li>
+              <li>
+                Pedir exatamente o que importa (bases brutas, metadados, logs,
+                complementações de laudo).
+              </li>
+              <li>Ler e impugnar laudos sem depender do perito adverso.</li>
+              <li>Questionar prints/capturas com critérios técnicos claros.</li>
+              <li>
+                Transformar artefatos técnicos em teses defensivas e atuar com
+                firmeza em audiência.
+              </li>
+            </ul>
+            <a href="#inscricao" class="cta-button">Quero me inscrever agora</a>
+            <p class="disclaimer">
+              *Conteúdo educacional; não constitui aconselhamento para casos
+              específicos nem promessa de resultado.
+            </p>
+          </div>
         </div>
       </section>
 
