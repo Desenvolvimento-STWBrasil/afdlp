@@ -1046,6 +1046,101 @@
           font-size: 1.2rem;
         }
       }
+
+      /* --- SEÇÃO DE PREÇO --- */
+      .pricing-section {
+        padding: 80px 0;
+        background-color: #0d1b2a; /* Cor de fundo escura para destaque */
+      }
+
+      .pricing-card {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border: 1px solid #e0e0e0;
+      }
+
+      .pricing-header h2 {
+        font-size: 2rem; /* 32px */
+        font-weight: 700;
+        color: #1b263b;
+        margin-bottom: 8px;
+      }
+
+      .pricing-header p {
+        color: #555;
+        font-size: 1.1rem; /* 18px */
+        margin-bottom: 24px;
+      }
+
+      .lote-tag {
+        display: inline-block;
+        background-color: #fca311; /* Cor de destaque */
+        color: #1b263b;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+      }
+
+      .price-details {
+        margin-bottom: 30px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding: 24px 0;
+      }
+
+      .old-price {
+        font-size: 1.25rem; /* 20px */
+        color: #777;
+        text-decoration: line-through;
+        margin: 0;
+      }
+
+      .new-price {
+        font-size: 3rem; /* 48px */
+        font-weight: 800;
+        color: #0d1b2a;
+        margin: 4px 0;
+      }
+
+      .new-price strong {
+        color: #1a73e8; /* Cor principal azul */
+      }
+
+      .installments-info {
+        font-size: 1.2rem; /* 19px */
+        color: #333;
+        margin: 0;
+      }
+
+      .pricing-card .cta-button {
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 18px; /* Botão mais robusto */
+        font-size: 1.1rem;
+        box-shadow: 0 4px 15px rgba(252, 163, 17, 0.4); /* Sombra correspondente à cor */
+      }
+
+      .secure-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #777;
+        font-size: 0.9rem;
+        margin-top: 16px;
+      }
+
+      .secure-info svg {
+        stroke: #777;
+      }
     </style>
   </head>
   <body>
@@ -1459,7 +1554,10 @@
 
           <div class="professor-destaque">
             <div class="professor-imagem">
-              <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/09/leandro_socio.jpg" alt="Foto de Leandro Morales" />
+              <img
+                src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/09/leandro_socio.jpg"
+                alt="Foto de Leandro Morales"
+              />
             </div>
             <div class="professor-info">
               <h3>Leandro Morales</h3>
@@ -1487,7 +1585,10 @@
 
           <div class="professor-destaque reverse">
             <div class="professor-imagem">
-              <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/09/renan_socio.png" alt="Foto de Renan Cavalheiro" />
+              <img
+                src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/09/renan_socio.png"
+                alt="Foto de Renan Cavalheiro"
+              />
             </div>
             <div class="professor-info">
               <h3>Renan Cavalheiro</h3>
@@ -1514,7 +1615,10 @@
 
           <div class="professor-destaque">
             <div class="professor-imagem">
-              <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/09/Marcelo-Nagy_socio.webp" alt="Foto de Marcelo Nagy" />
+              <img
+                src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/09/Marcelo-Nagy_socio.webp"
+                alt="Foto de Marcelo Nagy"
+              />
             </div>
             <div class="professor-info">
               <h3>Marcelo Nagy</h3>
@@ -1553,10 +1657,30 @@
                     alt=""
                   />
                 </li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/06/ficcoce.png" alt="" /></li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSMPMG-E-AFD.jpg" alt="" /></li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSMPMS-E-AFD.jpg" alt="" /></li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSMPMT-E-AFD.jpg" alt="" /></li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2025/06/ficcoce.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSMPMG-E-AFD.jpg"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSMPMS-E-AFD.jpg"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSMPMT-E-AFD.jpg"
+                    alt=""
+                  />
+                </li>
                 <li>
                   <img
                     src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSPOLICIA-FORENSE-CEARA-E-AFD.jpg"
@@ -1564,20 +1688,52 @@
                   />
                 </li>
                 <li>
-                  <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSSABESP-E-AFD.jpg" alt="" />
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSSABESP-E-AFD.jpg"
+                    alt=""
+                  />
                 </li>
                 <li>
-                  <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSSERPRO-E-AFD.jpg" alt="" />
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2022/12/LOGOSSERPRO-E-AFD.jpg"
+                    alt=""
+                  />
                 </li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/02/Mercado-Livre.webp" alt="" /></li>
                 <li>
-                  <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/04/MPDFT.png" alt="" />
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/02/Mercado-Livre.webp"
+                    alt=""
+                  />
                 </li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/04/MPMA.png" alt="" /></li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/02/SEAP-BA.jpg" alt="" /></li>
-                <li><img src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/04/stf.png" alt="" /></li>
                 <li>
-                  <img src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/02/TRE-MA-e1707237682772.jpg" alt="" />
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/04/MPDFT.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/04/MPMA.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/02/SEAP-BA.jpg"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/04/stf.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <img
+                    src="https://academiadeforensedigital.com.br/wp-content/uploads/2024/02/TRE-MA-e1707237682772.jpg"
+                    alt=""
+                  />
                 </li>
               </ul>
             </div>
@@ -1644,6 +1800,56 @@
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="inscricao" class="pricing-section">
+        <div class="container">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <span class="lote-tag">LOTE 1</span>
+              <h2>Garanta sua Vaga com Condição Especial</h2>
+              <p>
+                Aproveite o valor promocional antes da virada de lote.
+                <strong>Restam apenas 6 vagas!</strong>
+              </p>
+            </div>
+
+            <div class="price-details">
+              <p class="old-price">De <s>R$ 4.200,00</s></p>
+              <p class="new-price">por <strong>R$ 3.127,00</strong></p>
+              <p class="installments-info">
+                em até <strong>12x</strong> no cartão
+              </p>
+            </div>
+
+            <a
+              href="https://checkout.academiadeforensedigital.com.br/pay/imersao-em-prova-digital"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button"
+            >
+              QUERO GARANTIR MINHA VAGA
+            </a>
+
+            <p class="secure-info">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Pagamento 100% seguro. Ambiente verificado.
+            </p>
           </div>
         </div>
       </section>
